@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <div class="container">
-    <h1>Crea una Tarea</h1>
-    <form v-on:submit.prevent="ingresarTarea">
-      <p>Tarea: <input type="text" v-model="nombre" /></p>
-      <button type="submit">Ingresar Tarea</button>
-    </form>
-    
+      <h1>Crea una Tarea</h1>
+      <form v-on:submit.prevent="ingresarTarea">
+        <p>Tarea: <input type="text" v-model="nombre" /></p>
+        <button type="submit">Ingresar Tarea</button>
+      </form>
+
       <ul class="list-group" v-for="(tarea, id) in tareas" :key="tarea">
-          <li class="list-group-item">{{ id }} - {{ tarea.nombre }}</li>
-      </ul>  
-  </div>
+        <li class="list-group-item">{{ id }} - {{ tarea.nombre }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
       this.tareas.push({
         nombre: this.nombre,
       });
-      this.nombre = ''
+      this.nombre = "";
     },
   },
 };
